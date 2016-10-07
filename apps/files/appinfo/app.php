@@ -1,4 +1,6 @@
 <?php
+
+use Symfony\Component\EventDispatcher\GenericEvent;
 /**
  * @author Jakob Sack <mail@jakobsack.de>
  * @author Joas Schilling <coding@schilljs.com>
@@ -58,3 +60,5 @@ $templateManager->registerTemplate('application/vnd.oasis.opendocument.spreadshe
 		\OC::$server->getConfig()
 	);
 });
+
+\OCP\Util::connectHook('\OCP\Config', 'js', '\OCA\Files\App', 'extendJsConfig');
