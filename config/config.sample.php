@@ -565,14 +565,12 @@ $CONFIG = array(
 'check_for_working_htaccess' => true,
 
 /**
- * In certain environments it is desired to have a read-only configuration file.
- * When this switch is set to ``true`` ownCloud will not verify whether the
- * configuration is writable. However, it will not be possible to configure
- * all options via the Web interface. Furthermore, when updating ownCloud
- * it is required to make the configuration file writable again for the update
- * process.
+ * In a clustered environment neither the config folder nor the apps folder are
+ * writable. In such environments ownCloud is not allowed to change the contents
+ * of these files/folders.
+ * This config value is used to instruct ownCloud about the desired behavior.
  */
-'config_is_read_only' => false,
+'cluster.mode' => false,
 
 /**
  * Logging
